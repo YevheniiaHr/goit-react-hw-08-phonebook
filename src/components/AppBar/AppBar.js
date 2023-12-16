@@ -1,16 +1,16 @@
-import { ImportContactsOutlined, Navigation } from '@mui/icons-material';
 import { useAuth } from 'hooks/useAuth';
-import { IconButton, Toolbar, Typography } from '@mui/material';
 import { UserMenu } from 'components/UserMenu';
-import { AuthNav } from 'components/AuthNav';
+import { AuthNav } from '../AuthNav/AuthNav';
+import { Navigation } from 'components/Navigation/Navigation';
+import { Header } from './App.styled';
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
     <>
-      <header>
+      <Header>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </header>
+      </Header>
     </>
   );
 };
