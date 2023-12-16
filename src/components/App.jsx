@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { lazy, useEffect } from 'react';
-import { Loader } from './Loader';
+
 import { Route, Routes } from 'react-router-dom';
 
 import { RestrictedRoute } from './RestrictedRoute';

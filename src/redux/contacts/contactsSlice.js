@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
+
 import { fetchContacts, addContact, deleteContact } from './operations';
-import persistReducer from 'redux-persist/es/persistReducer';
 import { logOut } from '../auth/operation';
 
 const handlePending = state => {
