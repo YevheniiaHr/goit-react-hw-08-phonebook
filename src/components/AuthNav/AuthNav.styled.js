@@ -12,3 +12,7 @@ export const StyledLink = styled(NavLink)`
     color: red;
   }
 `;
+export const NavList = styled.ul`
+  display: flex;
+  gap: 50px;
+`;

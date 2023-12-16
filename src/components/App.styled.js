@@ -13,6 +13,9 @@ export const Section = styled.section`
 `;
 export const Title = styled.h1`
   font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 `;
 
 export const SectionTitle = styled.h2`
