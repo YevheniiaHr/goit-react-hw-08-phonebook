@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { lazy, useEffect } from 'react';
-
+import React, { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import { RestrictedRoute } from './RestrictedRoute';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
@@ -10,16 +8,23 @@ import { useAuth } from 'hooks/useAuth';
 import { currentUser } from '../redux/auth/operation';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
-const ContactsPage = lazy(() => import('../pages/ContactsPage'));
-
-const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));
-const LoginPage = lazy(() => import('../pages/LoginPage'));
+const ContactsPage = lazy(() =>
+  import('../pages/ContactsPage').then(module => ({
+    default: module.ContactsPage,
+  }))
+);
+const RegistrationPage = lazy(() =>
+  import('../pages/RegistrationPage').then(module => ({
+    default: module.RegistrationPage,
+  }))
+);
+const LoginPage = lazy(() =>
+  import('../pages/LoginPage').then(module => ({ default: module.LoginPage }))
+);
 
 export const App = () => {
-  // const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
-  // const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(currentUser());
@@ -36,20 +41,20 @@ export const App = () => {
           element={
             <RestrictedRoute
               redirectTo="/contacts"
-              component={<RegistrationPage />}
+              component={RegistrationPage}
             />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={LoginPage} />
           }
         />
         <Route
           path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            <PrivateRoute redirectTo="/login" component={ContactsPage} />
           }
         />
       </Route>

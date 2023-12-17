@@ -1,9 +1,15 @@
-import ContactForm from 'components/Form/Form';
+import { Container } from '@mui/material';
+import { RegisterForm } from '../components/RegisterForm';
+import { Helmet } from 'react-helmet';
 
-export const Registration = () => {
+export const RegistrationPage = () => {
   return (
-    <div>
-      <ContactForm />
-    </div>
+    <Container>
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
+
+      <RegisterForm />
+    </Container>
   );
 };

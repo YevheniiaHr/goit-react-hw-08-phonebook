@@ -1,7 +1,9 @@
-import ContactForm from 'components/Form/Form';
-
+import { Helmet } from 'react-helmet';
 export const Login = () => {
   <div>
-    <ContactForm />
+    <Helmet>
+      <title>Login</title>
+    </Helmet>
+    {/* <LoginForm /> */}
   </div>;
 };
