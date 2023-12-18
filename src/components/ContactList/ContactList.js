@@ -1,9 +1,9 @@
 import ContactItem from 'components/ListItem/ListItem';
 import { List } from './ContactList.styled';
 import {
-  selectContacts,
+  // selectContacts,
   selectError,
-  selectIsLoading,
+  // selectIsLoading,
   selectVisibleContacts,
 } from '../../redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
