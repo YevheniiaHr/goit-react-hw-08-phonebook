@@ -10,9 +10,9 @@ export const UserMenu = () => {
   return (
     <>
       <AccountCircle />
-      <p>Welcome,{user.name} </p>
+      <h3>Welcome, {user.name}</h3>
 
-      <Button variant="contained" onClick={() => dispatch(logOut)}>
+      <Button variant="contained" onClick={() => dispatch(logOut())}>
         Logout
       </Button>
     </>

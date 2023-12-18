@@ -56,11 +56,3 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-// const persistConfig = {
-//   key: 'contacts',
-//   storage,
-// };
-// export const contactsPersReducer = persistReducer(
-//   persistConfig,
-//   contactsSlice.reducer
-// );
