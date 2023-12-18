@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { logIn } from '../redux/auth/operation';
+
+import { register } from '../redux/auth/operation';
 import { ThemeProvider } from 'styled-components';
 import {
   Avatar,
@@ -21,11 +22,13 @@ export const RegisterForm = () => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      logIn({
+      register({
+        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
+
     form.reset();
   };
   const defaultTheme = createTheme();
@@ -85,9 +88,9 @@ export const RegisterForm = () => {
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  minLength="6"
-                  maxLength="12"
-                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                  // minLength="6"
+                  // maxLength="12"
+                  // pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
                 />
               </Grid>
             </Grid>

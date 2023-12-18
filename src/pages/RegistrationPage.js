@@ -2,7 +2,7 @@ import { Container } from '@mui/material';
 import { RegisterForm } from '../components/RegisterForm';
 import { Helmet } from 'react-helmet';
 
-export const RegistrationPage = () => {
+const RegistrationPage = () => {
   return (
     <Container>
       <Helmet>
@@ -13,3 +13,4 @@ export const RegistrationPage = () => {
     </Container>
   );
 };
+export default RegistrationPage;

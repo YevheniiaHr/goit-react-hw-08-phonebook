@@ -1,9 +1,14 @@
+import { Container } from '@mui/material';
+import { LoginForm } from '../components/LoginForm';
 import { Helmet } from 'react-helmet';
-export const Login = () => {
-  <div>
-    <Helmet>
-      <title>Login</title>
-    </Helmet>
-    {/* <LoginForm /> */}
-  </div>;
+const LoginPage = () => {
+  return (
+    <Container>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
+      <LoginForm />
+    </Container>
+  );
 };
+export default LoginPage;

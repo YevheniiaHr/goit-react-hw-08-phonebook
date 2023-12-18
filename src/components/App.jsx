@@ -8,19 +8,9 @@ import { useAuth } from 'hooks/useAuth';
 import { currentUser } from '../redux/auth/operation';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
-const ContactsPage = lazy(() =>
-  import('../pages/ContactsPage').then(module => ({
-    default: module.ContactsPage,
-  }))
-);
-const RegistrationPage = lazy(() =>
-  import('../pages/RegistrationPage').then(module => ({
-    default: module.RegistrationPage,
-  }))
-);
-const LoginPage = lazy(() =>
-  import('../pages/LoginPage').then(module => ({ default: module.LoginPage }))
-);
+const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
 
 export const App = () => {
   const dispatch = useDispatch();

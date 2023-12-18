@@ -1,6 +1,6 @@
 import { Filter } from '@mui/icons-material';
 import { Section, SectionTitle } from 'components/App.styled';
-import { ContactList } from 'components/ContactList/ContactList';
+import { ContactList } from '../components/ContactList/ContactList';
 import ContactForm from 'components/Form/Form';
 import { Loader } from 'components/Loader';
 import { useEffect } from 'react';
