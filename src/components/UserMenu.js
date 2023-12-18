@@ -8,12 +8,13 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
   return (
-    <div>
-      <p>Welcome,{user.name} </p>
+    <>
       <AccountCircle />
+      <p>Welcome,{user.name} </p>
+
       <Button variant="contained" onClick={() => dispatch(logOut)}>
         Logout
       </Button>
-    </div>
+    </>
   );
 };

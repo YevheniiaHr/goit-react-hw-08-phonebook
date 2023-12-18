@@ -1,4 +1,3 @@
-import { Filter } from '@mui/icons-material';
 import { Section, SectionTitle } from 'components/App.styled';
 import { ContactList } from '../components/ContactList/ContactList';
 import ContactForm from 'components/Form/Form';
@@ -7,6 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../redux/contacts/operations';
 import { selectError, selectIsLoading } from '../redux/contacts/selectors';
+import Filter from 'components/Filter/Filter';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
