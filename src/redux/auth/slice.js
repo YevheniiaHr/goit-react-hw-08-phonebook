@@ -6,21 +6,41 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    clearError: state => {
+      state.error = null;
+    },
+    clearRegisterError: state => {
+      state.registerError = null;
+    },
+    clearLoginError: state => {
+      state.loginError = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.error = null;
+      })
+      .addCase(register.rejected, (state, action) => {
+        state.registerError = action.payload;
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.error = null;
+      })
+      .addCase(logIn.rejected, (state, action) => {
+        state.loginError = action.payload;
       })
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
@@ -41,3 +61,5 @@ const authSlice = createSlice({
   },
 });
 export const authReducer = authSlice.reducer;
+export const { clearError, clearRegisterError, clearLoginError } =
+  authSlice.actions;

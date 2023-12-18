@@ -61,8 +61,6 @@ export const currentUser = createAsyncThunk(
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
-    } finally {
-      clearAuthHeader();
     }
   }
 );

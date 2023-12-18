@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { register } from '../redux/auth/operation';
 import { ThemeProvider } from 'styled-components';
@@ -15,21 +15,26 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import Grid from '@mui/material/Grid';
+import { selectRegisterError } from '../redux/auth/selectors';
 
 export const RegisterForm = () => {
+  const error = useSelector(selectRegisterError);
   const dispatch = useDispatch();
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const form = e.currentTarget;
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-
-    form.reset();
+    try {
+      dispatch(
+        register({
+          name: form.elements.name.value,
+          email: form.elements.email.value,
+          password: form.elements.password.value,
+        })
+      );
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert(`Registration failed: ${error.message}`);
+    }
   };
   const defaultTheme = createTheme();
   return (
@@ -56,6 +61,11 @@ export const RegisterForm = () => {
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
+            {error && (
+              <p style={{ color: 'red' }}>
+                Something went wrong...Try another email or password
+              </p>
+            )}
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField

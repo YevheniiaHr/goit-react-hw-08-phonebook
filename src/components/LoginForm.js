@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logIn } from '../redux/auth/operation';
 import {
   Avatar,
@@ -14,22 +14,25 @@ import {
   createTheme,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-// import { Grid } from 'react-loader-spinner';
-// import { Link } from 'react-router-dom';
+import { selectLoginError } from '../redux/auth/selectors';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-
+  const error = useSelector(selectLoginError);
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+    try {
+      dispatch(
+        logIn({
+          email: form.elements.email.value,
+          password: form.elements.password.value,
+        })
+      );
+    } catch (error) {
+      console.error('Sign in error:', error);
+      alert(`Sign in failed: ${error.message}`);
+    }
   };
   const defaultTheme = createTheme();
   return (
@@ -56,6 +59,11 @@ export const LoginForm = () => {
             noValidate
             sx={{ mt: 1 }}
           >
+            {error && (
+              <p style={{ color: 'red' }}>
+                Something went wrong... check your data
+              </p>
+            )}
             <TextField
               margin="normal"
               required

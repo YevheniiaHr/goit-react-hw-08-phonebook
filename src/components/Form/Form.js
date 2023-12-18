@@ -46,13 +46,23 @@ const ContactForm = () => {
       <Form>
         <FormGroup>
           Name
-          <Field name="name" type="text" placeholder="Enter a name" />
+          <Field
+            name="name"
+            type="text"
+            placeholder="Enter a name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          />
           <ErrorMessage name="name" component="span" />
         </FormGroup>
 
         <FormGroup>
           Number
-          <Field name="number" type="tel" placeholder="Enter a phone-number" />
+          <Field
+            name="number"
+            type="tel"
+            placeholder="Enter a phone-number"
+            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+          />
           <ErrorMessage name="number" component="span" />
         </FormGroup>
 
