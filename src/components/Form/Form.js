@@ -31,6 +31,9 @@ const ContactForm = () => {
     }
 
     dispatch(addContact({ name, number }));
+    Notiflix.Notify.success(
+      `Contact with name ${name} has been added successfully to contacts list.`
+    );
     resetForm();
   };
 

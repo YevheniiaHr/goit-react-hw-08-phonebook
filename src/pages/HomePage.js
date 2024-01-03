@@ -2,7 +2,7 @@ import { Title } from '../components/App.styled';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="backgroundColor: green">
       <Title>Your phonebook</Title>
     </div>
   );

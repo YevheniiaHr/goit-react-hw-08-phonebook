@@ -7,6 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./components/photo/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
@@ -26,6 +29,9 @@ p {
 }
 button {
   cursor: pointer;
+  width: 90px;
+  padding: 5px;
+  align-self: center;
 }
 button:hover,
 button:focus {

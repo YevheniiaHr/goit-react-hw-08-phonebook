@@ -11,7 +11,7 @@ const ContactItem = ({ id, name, number }) => {
   return (
     <ListItem>
       <p>
-        {name}: {number}
+        {name} : {number}
       </p>
       <Button type="button" onClick={removeContact}>
         Delete
