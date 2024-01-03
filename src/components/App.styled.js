@@ -12,10 +12,11 @@ export const Section = styled.section`
   flex-wrap: wrap;
 `;
 export const Title = styled.h1`
-  font-size: 30px;
+  font-size: 50px;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 200px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -24,4 +25,8 @@ export const SectionTitle = styled.h2`
 `;
 export const Message = styled.p`
   color: red;
+`;
+export const TitleUser = styled.h3`
+  font-size: 30px;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 `;
