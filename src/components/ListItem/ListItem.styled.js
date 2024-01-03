@@ -7,3 +7,7 @@ export const ListItem = styled.li`
 export const Button = styled.button`
   margin-left: 20px;
 `;
+export const ListItemPar = styled.p`
+  font-size: 18px;
+  font-weight: 500;
+`;

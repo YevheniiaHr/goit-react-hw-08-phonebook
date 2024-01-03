@@ -48,7 +48,7 @@ const ContactForm = () => {
     >
       <Form>
         <FormGroup>
-          Name
+          <h3>Name</h3>
           <Field
             name="name"
             type="text"
@@ -59,7 +59,7 @@ const ContactForm = () => {
         </FormGroup>
 
         <FormGroup>
-          Number
+          <h3>Number</h3>
           <Field
             name="number"
             type="tel"

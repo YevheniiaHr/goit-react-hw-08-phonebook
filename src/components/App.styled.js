@@ -21,7 +21,9 @@ export const Title = styled.h1`
 
 export const SectionTitle = styled.h2`
   margin-bottom: 15px;
-  margin-top: 25px;
+  margin-top: 50px;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px grey, 0 0 1em blue, 0 0 0.2em blue;
 `;
 export const Message = styled.p`
   color: red;

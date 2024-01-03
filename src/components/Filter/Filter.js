@@ -14,7 +14,7 @@ const Filter = () => {
 
   return (
     <Label>
-      Find contacts by name
+      <h3>Find contacts by name</h3>
       <Input
         name="filter"
         type="text"
